@@ -1,0 +1,15 @@
+{
+  "name": "@goat-rpc/client",
+  "version": "0.0.1",
+  "keywords": [
+    "grpc",
+    "client"
+  ],
+  "author": {
+    "name": "oneofthezombies",
+    "email": "hunhoekim@gmail.com",
+    "url": "https://github.com/oneofthezombies"
+  },
+  "license": "MIT",
+  "description": "Modern gRPC Client Library"
+}

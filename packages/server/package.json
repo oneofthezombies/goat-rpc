@@ -1,0 +1,15 @@
+{
+  "name": "@goat-rpc/server",
+  "version": "0.0.1",
+  "keywords": [
+    "grpc",
+    "server"
+  ],
+  "author": {
+    "name": "oneofthezombies",
+    "email": "hunhoekim@gmail.com",
+    "url": "https://github.com/oneofthezombies"
+  },
+  "license": "MIT",
+  "description": "Modern gRPC Server Framework"
+}
