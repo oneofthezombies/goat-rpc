@@ -11,5 +11,5 @@
     "url": "https://github.com/oneofthezombies"
   },
   "license": "MIT",
-  "description": "Modern gRPC Server Framework"
+  "description": "A modern gRPC Node.js server framework that supports TypeScript"
 }
