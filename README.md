@@ -1,3 +1,3 @@
 # goatRPC
 
-Modern gRPC Server Framework and Client Library
+A modern gRPC Node.js Framework and Library that supports TypeScript.
