@@ -6,6 +6,7 @@
   },
   "imports": {
     "@goat-rpc/runtime-core": "../runtime-core/src/index.ts",
+    "@goat-rpc/server-core": "../server-core/src/index.ts",
     "@std/assert": "jsr:@std/assert@^1.0.6"
   }
 }
