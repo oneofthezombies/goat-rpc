@@ -4,7 +4,9 @@
     "outDir": "./build",
     "rootDir": "./",
     "declaration": true,
-    "types": ["node"]
+    "types": [],
+    "module": "Preserve",
+    "moduleResolution": "Bundler"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

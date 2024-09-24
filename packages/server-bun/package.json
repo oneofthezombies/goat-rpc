@@ -1,6 +1,5 @@
 {
-  "name": "@goat-rpc/runtime-bun",
-  "main": "src/index.ts",
+  "name": "@goat-rpc/server-bun",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",

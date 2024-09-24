@@ -1,15 +1,16 @@
 {
-  "name": "@goat-rpc/client",
+  "name": "@goat-rpc/server-node",
   "version": "0.0.1",
   "keywords": [
     "grpc",
-    "client"
+    "server"
   ],
   "author": {
     "name": "oneofthezombies",
     "email": "hunhoekim@gmail.com",
     "url": "https://github.com/oneofthezombies"
   },
+  "type": "module",
   "license": "MIT",
-  "description": "A modern gRPC Node.js client library that supports TypeScript"
+  "description": "A modern gRPC Node.js server framework that supports TypeScript"
 }
