@@ -1,0 +1,12 @@
+{
+  "name": "@goat-rpc/runtime-bun",
+  "main": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@goat-rpc/runtime-core": "*"
+  },
+  "peerDependencies": {
+    "typescript": "5.5.2"
+  }
+}
