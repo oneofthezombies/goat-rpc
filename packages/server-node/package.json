@@ -12,5 +12,12 @@
   },
   "type": "module",
   "license": "MIT",
-  "description": "A modern gRPC Node.js server framework that supports TypeScript"
+  "description": "A modern gRPC Node.js server framework that supports TypeScript",
+  "exports": {
+    ".": {
+      "types": "./build/src/index.d.ts",
+      "import": "./build/src/index.js",
+      "require": null
+    }
+  }
 }
