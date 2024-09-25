@@ -1,10 +1,10 @@
 {
-  "description": "goatRPC JavaScript monorepo",
+  "description": "goatRPC monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "typescript": "5.5.2"
+    "typescript": "5.6.2"
   }
 }

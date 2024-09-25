@@ -1,3 +1,3 @@
 # goatRPC
 
-A modern gRPC Node.js Framework and Library that supports TypeScript.
+A modern gRPC Node.js framework, library and tools that supports TypeScript.

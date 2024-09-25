@@ -5,6 +5,9 @@
     "grpc",
     "generator"
   ],
+  "bin": {
+    "goat-rpc-gen": "./bin/goat-rpc-gen.js"
+  },
   "author": {
     "name": "oneofthezombies",
     "email": "hunhoekim@gmail.com",
@@ -12,7 +15,7 @@
   },
   "type": "module",
   "license": "MIT",
-  "description": "A modern TypeScript gRPC generator cli tools",
+  "description": "A modern TypeScript gRPC generator",
   "exports": {
     ".": {
       "types": "./build/src/index.d.ts",
