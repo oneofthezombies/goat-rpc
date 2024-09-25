@@ -1,15 +1,15 @@
 {
   "name": "@goat-rpc/client",
   "version": "0.0.1",
+  "description": "A modern TypeScript gRPC client library",
   "keywords": [
     "grpc",
     "client"
   ],
+  "license": "MIT",
   "author": {
     "name": "oneofthezombies",
     "email": "hunhoekim@gmail.com",
     "url": "https://github.com/oneofthezombies"
-  },
-  "license": "MIT",
-  "description": "A modern TypeScript gRPC client library"
+  }
 }

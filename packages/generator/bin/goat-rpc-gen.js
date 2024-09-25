@@ -1,2 +1,2 @@
-import { main } from "./build/src/index.js";
-main(process.argv);
+import { main } from '../dist/src/index.js'
+main(process.argv)

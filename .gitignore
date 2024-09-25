@@ -132,5 +132,10 @@ dist
 # Finder (MacOS) folder config
 .DS_Store
 
-# TypeScript build directory
+# TypeScript build
 build/
+dist/
+
+# swc config
+.swcrc
+!/.swcrc

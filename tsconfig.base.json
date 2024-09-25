@@ -1,5 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    /* Linting */
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "alwaysStrict": true,

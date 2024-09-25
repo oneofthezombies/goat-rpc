@@ -1,18 +1,18 @@
 {
   "name": "@goat-rpc/server",
   "version": "0.0.1",
+  "description": "A modern TypeScript gRPC server framework",
   "keywords": [
     "grpc",
     "server"
   ],
+  "license": "MIT",
   "author": {
     "name": "oneofthezombies",
     "email": "hunhoekim@gmail.com",
     "url": "https://github.com/oneofthezombies"
   },
   "type": "module",
-  "license": "MIT",
-  "description": "A modern TypeScript gRPC server framework",
   "exports": {
     ".": {
       "types": "./build/src/index.d.ts",
