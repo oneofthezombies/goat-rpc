@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# TypeScript build directory
+build/

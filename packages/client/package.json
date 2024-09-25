@@ -11,5 +11,5 @@
     "url": "https://github.com/oneofthezombies"
   },
   "license": "MIT",
-  "description": "A modern gRPC Node.js client library that supports TypeScript"
+  "description": "A modern TypeScript gRPC client library"
 }
