@@ -1,5 +1,5 @@
 {
-  "name": "@goat-rpc/client-node",
+  "name": "@goat-rpc/client",
   "version": "0.0.1",
   "keywords": [
     "grpc",
@@ -11,5 +11,5 @@
     "url": "https://github.com/oneofthezombies"
   },
   "license": "MIT",
-  "description": "A modern gRPC Node.js client library that supports TypeScript"
+  "description": "A modern TypeScript gRPC client library"
 }

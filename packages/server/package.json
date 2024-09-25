@@ -1,0 +1,29 @@
+{
+  "name": "@goat-rpc/server",
+  "version": "0.0.1",
+  "keywords": [
+    "grpc",
+    "server"
+  ],
+  "author": {
+    "name": "oneofthezombies",
+    "email": "hunhoekim@gmail.com",
+    "url": "https://github.com/oneofthezombies"
+  },
+  "type": "module",
+  "license": "MIT",
+  "description": "A modern TypeScript gRPC server framework",
+  "exports": {
+    ".": {
+      "types": "./build/src/index.d.ts",
+      "import": "./build/src/index.js",
+      "require": null
+    }
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "1.11.3",
+    "@grpc/proto-loader": "0.7.13",
+    "lodash": "4.17.21",
+    "protoc-gen-ts": "^0.8.7"
+  }
+}
