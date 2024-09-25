@@ -42,10 +42,6 @@ function parseArgv() {
   }
 }
 
-function main() {
-  const { rootPath } = parseArgv()
-  symlink(rootPath, '.swcrc')
-  symlink(rootPath, 'scripts')
-}
-
-main()
+const { rootPath } = parseArgv()
+symlink(rootPath, '.swcrc')
+symlink(rootPath, 'scripts')
