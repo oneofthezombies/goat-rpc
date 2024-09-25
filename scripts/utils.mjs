@@ -33,5 +33,5 @@ export function run(command, args, options) {
 }
 
 export function npxPath() {
-  return path.resolve(path.dirname(process.argv[0]), 'npx')
+  return path.resolve(path.dirname(process.execPath), 'npx')
 }
