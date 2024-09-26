@@ -1,0 +1,29 @@
+{
+  "name": "@goat-rpc/protocol",
+  "version": "0.0.1",
+  "description": "A RPC protocol over WebSocket",
+  "keywords": [
+    "grpc",
+    "protocol"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "oneofthezombies",
+    "email": "hunhoekim@gmail.com",
+    "url": "https://github.com/oneofthezombies"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./build/src/index.d.ts",
+      "import": "./build/src/index.js",
+      "require": null
+    }
+  },
+  "dependencies": {
+    "protobufjs-cli": "1.1.3"
+  },
+  "scripts": {
+    "generate": "mkdir -p dist && pbjs -t static-module -w es6 -o dist/goat-rpc.js src/goat_rpc.proto && pbts -o dist/goat-rpc.d.ts dist/goat-rpc.js"
+  }
+}

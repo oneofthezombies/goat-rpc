@@ -28,6 +28,12 @@
     "check": "scripts/check.mjs",
     "clean": "scripts/clean.mjs",
     "dev": "scripts/dev.mjs",
-    "start:dev": "scripts/start-dev.mjs"
+    "start:dev": "scripts/start-dev.mjs",
+    "generate": "pbjs -t static-module -w es6 -o goat-rpc.js src/goat_rpc.proto && pbts -o goat-rpc.d.ts goat-rpc.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "1.11.3",
+    "protobufjs": "7.4.0",
+    "protobufjs-cli": "1.1.3"
   }
 }
