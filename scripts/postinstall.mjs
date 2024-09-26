@@ -3,7 +3,7 @@
 import path from 'path'
 import fs from 'fs'
 
-async function symlink(rootPath, filename) {
+function symlink(rootPath, filename) {
   const srcPath = path.resolve(rootPath, filename)
   if (!fs.existsSync(srcPath)) {
     throw new Error(`source ${filename} not found. path: ${srcPath}`)
