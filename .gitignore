@@ -137,7 +137,9 @@ build/
 dist/
 
 # symlink
-.swcrc
-!/.swcrc
 scripts
 !/scripts
+.swcrc
+!/.swcrc
+nodemon.json
+!/nodemon.json

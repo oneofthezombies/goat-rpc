@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import path from 'path'
 import fs from 'fs'
 
@@ -43,5 +45,6 @@ function parseArgv() {
 }
 
 const { rootPath } = parseArgv()
-symlink(rootPath, '.swcrc')
 symlink(rootPath, 'scripts')
+symlink(rootPath, '.swcrc')
+symlink(rootPath, 'nodemon.json')

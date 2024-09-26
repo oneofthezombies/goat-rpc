@@ -1,10 +1,10 @@
 {
-  "name": "@goat-rpc/generator",
+  "name": "@goat-rpc/loader",
   "version": "0.0.1",
-  "description": "A modern TypeScript gRPC generator",
+  "description": "A modern TypeScript gRPC loader",
   "keywords": [
     "grpc",
-    "generator"
+    "loader"
   ],
   "license": "MIT",
   "author": {
@@ -19,9 +19,6 @@
       "import": "./dist/src/index.js",
       "require": null
     }
-  },
-  "bin": {
-    "goat-rpc-gen": "bin/goat-rpc-gen.js"
   },
   "files": [
     "dist"

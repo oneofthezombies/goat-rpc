@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 import { run } from './utils.mjs'
 
 run(
-  process.argv[0],
+  process.execPath,
   [
     '--import',
     '@swc-node/register/esm-register',
