@@ -1,17 +1,7 @@
 {
-  "name": "@goat-rpc/protocol",
+  "name": "@goat-rpc/proto",
   "version": "0.0.1",
-  "description": "A RPC protocol over WebSocket",
-  "keywords": [
-    "grpc",
-    "protocol"
-  ],
-  "license": "MIT",
-  "author": {
-    "name": "oneofthezombies",
-    "email": "hunhoekim@gmail.com",
-    "url": "https://github.com/oneofthezombies"
-  },
+  "description": "A protocol over WebSocket",
   "type": "module",
   "exports": {
     ".": {
