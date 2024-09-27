@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package my_sub_package;
-
-message MyMessage {
-  int32 my_int = 1;
-}
