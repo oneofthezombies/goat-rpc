@@ -26,6 +26,6 @@
     "start:dev": "scripts/start-dev.mjs"
   },
   "dependencies": {
-    "@goat-rpc/protocol": "*"
+    "@goat-rpc/proto": "*"
   }
 }
