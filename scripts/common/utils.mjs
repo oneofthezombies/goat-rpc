@@ -1,5 +1,4 @@
 import { spawnSync } from 'node:child_process'
-import path from 'node:path'
 
 /**
  *
@@ -54,12 +53,4 @@ export function shell(command, options) {
   }
 
   return run(command, [], options)
-}
-
-/**
- *
- * @returns {string}
- */
-export function npxPath() {
-  return path.resolve(path.dirname(process.execPath), 'npx')
 }

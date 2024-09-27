@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "build": "mkdir -p dist/src && pbjs -t static-module -w commonjs --es6 -o dist/src/generated.js res/goat_rpc.proto && pbts -o dist/src/generated.d.ts dist/src/generated.js",
+    "build": "scripts/build.mjs",
     "clean": "scripts/common/clean.mjs",
     "start:dev": "scripts/start-dev.mjs"
   },
