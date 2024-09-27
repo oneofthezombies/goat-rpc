@@ -54,9 +54,13 @@ function parseArgv() {
   }
 }
 
-const { rootPath } = parseArgv()
-const srcs = ['scripts/share', '.swcrc', 'nodemon.json']
-for (const src of srcs) {
-  symlink(rootPath, src)
+if (process.argv[1] === import.meta.filename) {
+  const { rootPath } = parseArgv()
+  const srcs = ['scripts/share', '.swcrc', 'nodemon.json']
+  for (const src of srcs) {
+    symlink(rootPath, src)
+  }
+  console.log(
+    `symlinked ${srcs.join(' ')} from ${rootPath} to ${process.cwd()}`
+  )
 }
-console.log(`symlinked ${srcs.join(' ')} from ${rootPath} to ${process.cwd()}`)

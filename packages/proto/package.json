@@ -13,7 +13,7 @@
   "scripts": {
     "build": "scripts/build.mjs",
     "clean": "scripts/share/clean.mjs",
-    "start:dev": "scripts/start-dev.mjs"
+    "start:dev": "scripts/share/start-dev.mjs"
   },
   "dependencies": {
     "protobufjs": "7.4.0"
