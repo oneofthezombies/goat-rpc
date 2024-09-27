@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import path from 'path'
-import fs from 'fs'
+import path from 'node:path'
+import fs from 'node:fs'
 
 function symlink(rootPath, filename) {
   const srcPath = path.resolve(rootPath, filename)
@@ -22,9 +22,10 @@ function symlink(rootPath, filename) {
       )
     }
 
-    fs.rmSync(dstPath, { force: true })
+    fs.rmSync(dstPath, { force: true, recursive: true })
   }
 
+  fs.mkdirSync(path.dirname(dstPath), { recursive: true })
   fs.symlinkSync(srcPath, dstPath)
   console.log(`symbolic linked. ${srcPath} -> ${dstPath}`)
 }
@@ -45,6 +46,6 @@ function parseArgv() {
 }
 
 const { rootPath } = parseArgv()
-symlink(rootPath, 'scripts')
+symlink(rootPath, 'scripts/common')
 symlink(rootPath, '.swcrc')
 symlink(rootPath, 'nodemon.json')

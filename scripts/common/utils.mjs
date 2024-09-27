@@ -1,5 +1,5 @@
-import { spawnSync } from 'child_process'
-import path from 'path'
+import { spawnSync } from 'node:child_process'
+import path from 'node:path'
 
 export function run(command, args, options) {
   args ??= []
@@ -18,15 +18,17 @@ export function run(command, args, options) {
       return
     }
 
-    throw new Error(
+    console.error(
       `${command} ${args.join(' ')} exited with code ${result.status}`
     )
+    process.exit(result.status)
   }
 
   if (result.signal !== null) {
-    throw new Error(
+    console.error(
       `${command} ${args.join(' ')} exited with signal ${result.signal}`
     )
+    process.exit(1)
   }
 
   throw new Error(`unexpected run result. result: ${result}`)
