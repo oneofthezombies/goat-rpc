@@ -1,14 +1,18 @@
 import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 
+/**
+ *
+ * @param {string} command
+ * @param {string[]} args
+ * @param {unknown} options
+ * @returns {void}
+ */
 export function run(command, args, options) {
   args ??= []
   options ??= {}
   if (options.stdio === undefined) {
     options.stdio = 'inherit'
-  }
-  if (options.shell === undefined) {
-    options.shell = true
   }
 
   const result = spawnSync(command, args, options)
@@ -37,6 +41,25 @@ export function run(command, args, options) {
   throw new Error(`unexpected run result. result: ${result}`)
 }
 
+/**
+ *
+ * @param {string} command
+ * @param {unknown} options
+ * @returns {void}
+ */
+export function shell(command, options) {
+  options ??= {}
+  if (options.shell === undefined) {
+    options.shell = true
+  }
+
+  return run(command, [], options)
+}
+
+/**
+ *
+ * @returns {string}
+ */
 export function npxPath() {
   return path.resolve(path.dirname(process.execPath), 'npx')
 }
