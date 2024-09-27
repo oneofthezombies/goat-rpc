@@ -137,8 +137,8 @@ build/
 dist/
 
 # symlink
-scripts/common/
-!/scripts/common/
+**/scripts/common
+!/scripts/common
 .swcrc
 !/.swcrc
 nodemon.json
