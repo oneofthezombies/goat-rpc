@@ -4,7 +4,7 @@ import { shell } from './share/utils.mjs'
 import fs from 'node:fs'
 import path from 'node:path'
 
-if (process.argv[1] === import.meta.filename) {
+function main() {
   shell('mkdir -p dist/src')
   const jsPath = 'dist/src/generated.js'
   shell(
@@ -18,3 +18,5 @@ if (process.argv[1] === import.meta.filename) {
   })
   fs.renameSync(jsPath, cjsPath)
 }
+
+main()

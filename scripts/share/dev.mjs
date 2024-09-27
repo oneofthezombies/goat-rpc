@@ -2,6 +2,8 @@
 
 import { shell } from './utils.mjs'
 
-if (process.argv[1] === import.meta.filename) {
+function main() {
   shell('npx nodemon')
 }
+
+main()
