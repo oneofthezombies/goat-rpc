@@ -3,6 +3,12 @@
 import path from 'node:path'
 import fs from 'node:fs'
 
+/**
+ *
+ * @param {string} rootPath
+ * @param {string} filename
+ * @returns {void}
+ */
 function symlink(rootPath, filename) {
   const srcPath = path.resolve(rootPath, filename)
   if (!fs.existsSync(srcPath)) {
@@ -29,6 +35,10 @@ function symlink(rootPath, filename) {
   fs.symlinkSync(srcPath, dstPath)
 }
 
+/**
+ *
+ * @returns {{rootPath: string}}
+ */
 function parseArgv() {
   if (process.argv.length < 3) {
     throw new Error(`argv[2] must workspace's root path`)

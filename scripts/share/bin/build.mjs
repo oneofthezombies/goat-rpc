@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { run, npxPath } from '../utils.mjs'
+import { shell } from '../utils.mjs'
 
-run(npxPath(), ['swc', '--out-dir', 'dist', 'src'])
-run(npxPath(), ['tsc', '--declaration', '--emitDeclarationOnly'])
+shell('npx swc --out-dir dist src')
+shell('npx tsc --declaration --emitDeclarationOnly')

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { run, npxPath } from '../utils.mjs'
+import { shell } from '../utils.mjs'
 
-run(npxPath(), ['tsc', '--noEmit'])
+shell('npx tsc --noEmit')

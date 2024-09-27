@@ -1,5 +1,5 @@
 {
-  "delay": "500",
-  "exec": "scripts/share/nodemon-exec.mjs",
+  "delay": "300",
+  "exec": "concurrently --kill-others-on-fail --prefix [{name}] --prefix-colors bgBlue.bold,bgRed.bold npm:start:dev npm:check",
   "ext": "ts"
 }
