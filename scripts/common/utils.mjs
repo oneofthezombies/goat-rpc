@@ -7,6 +7,9 @@ export function run(command, args, options) {
   if (options.stdio === undefined) {
     options.stdio = 'inherit'
   }
+  if (options.shell === undefined) {
+    options.shell = true
+  }
 
   const result = spawnSync(command, args, options)
   if (result.error) {

@@ -1,5 +1,5 @@
 {
   "delay": "500",
-  "exec": "scripts/nodemon-exec.mjs",
+  "exec": "scripts/common/nodemon-exec.mjs",
   "ext": "ts"
 }

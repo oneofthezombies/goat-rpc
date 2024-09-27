@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { run } from './utils.mjs'
+import { run } from '../utils.mjs'
 
 run(
   process.execPath,
