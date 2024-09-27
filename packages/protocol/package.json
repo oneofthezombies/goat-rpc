@@ -15,16 +15,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./build/src/index.d.ts",
-      "import": "./build/src/index.js",
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
       "require": null
     }
   },
-  "dependencies": {
-    "protobufjs-cli": "1.1.3"
-  },
   "scripts": {
-    "build": "mkdir -p dist/src && pbjs -t static-module -w es6 -o dist/src/index.js res/goat_rpc.proto && pbts -o dist/src/index.d.ts dist/src/index.js",
-    "clean": "scripts/clean.mjs"
+    "build": "mkdir -p dist/src && pbjs -t static-module -w commonjs --es6 -o dist/src/generated.js res/goat_rpc.proto && pbts -o dist/src/generated.d.ts dist/src/generated.js",
+    "clean": "scripts/common/clean.mjs",
+    "start:dev": "scripts/start-dev.mjs"
+  },
+  "dependencies": {
+    "protobufjs": "7.4.0",
+    "protobufjs-cli": "1.1.3"
   }
 }
