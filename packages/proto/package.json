@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "scripts/build.mjs",
-    "clean": "scripts/common/clean.mjs",
+    "clean": "scripts/share/clean.mjs",
     "start:dev": "scripts/start-dev.mjs"
   },
   "dependencies": {

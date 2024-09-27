@@ -47,7 +47,7 @@ function parseArgv() {
 const { rootPath } = parseArgv()
 console.log(`symlink files from ${rootPath} to ${process.cwd()}`)
 
-const srcs = ['scripts/common', '.swcrc', 'nodemon.json']
+const srcs = ['scripts/share', '.swcrc', 'nodemon.json']
 console.log(`${srcs.join(' ')} done.`)
 for (const src of srcs) {
   symlink(rootPath, src)
