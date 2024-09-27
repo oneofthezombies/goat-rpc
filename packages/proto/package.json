@@ -11,9 +11,9 @@
     }
   },
   "scripts": {
-    "build": "scripts/build.mjs",
-    "clean": "scripts/share/clean.mjs",
-    "start:dev": "scripts/share/start-dev.mjs"
+    "build": "tsx scripts/build.ts",
+    "clean": "tsx scripts/share/clean.ts",
+    "start:dev": "tsx scripts/share/start-dev.ts"
   },
   "dependencies": {
     "protobufjs": "7.4.0"

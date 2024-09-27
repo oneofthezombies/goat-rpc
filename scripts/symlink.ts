@@ -1,15 +1,7 @@
-#!/usr/bin/env node
-
 import path from 'node:path'
 import fs from 'node:fs'
 
-/**
- *
- * @param {string} rootPath
- * @param {string} filename
- * @returns {void}
- */
-function symlink(rootPath, filename) {
+function symlink(rootPath: string, filename: string) {
   const srcPath = path.resolve(rootPath, filename)
   if (!fs.existsSync(srcPath)) {
     throw new Error(`source ${filename} not found. path: ${srcPath}`)
@@ -35,16 +27,12 @@ function symlink(rootPath, filename) {
   fs.symlinkSync(srcPath, dstPath)
 }
 
-/**
- *
- * @returns {{rootPath: string}}
- */
 function parseArgv() {
   if (process.argv.length < 3) {
     throw new Error(`argv[2] must workspace's root path`)
   }
 
-  const rootPath = process.argv[2]
+  const rootPath = process.argv[2] || ''
   if (!fs.existsSync(rootPath)) {
     throw new Error(`root path is not exist. path: ${rootPath}`)
   }

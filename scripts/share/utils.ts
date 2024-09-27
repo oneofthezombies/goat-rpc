@@ -1,13 +1,10 @@
-import { spawnSync } from 'node:child_process'
+import { spawnSync, SpawnSyncOptions } from 'node:child_process'
 
-/**
- *
- * @param {string} command
- * @param {string[]} args
- * @param {unknown} options
- * @returns {void}
- */
-export function run(command, args, options) {
+export function run(
+  command: string,
+  args?: string[],
+  options?: SpawnSyncOptions
+) {
   args ??= []
   options ??= {}
   if (options.stdio === undefined) {
@@ -40,13 +37,7 @@ export function run(command, args, options) {
   throw new Error(`unexpected run result. result: ${result}`)
 }
 
-/**
- *
- * @param {string} command
- * @param {unknown} options
- * @returns {void}
- */
-export function shell(command, options) {
+export function shell(command: string, options?: SpawnSyncOptions) {
   options ??= {}
   if (options.shell === undefined) {
     options.shell = true

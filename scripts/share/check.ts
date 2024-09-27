@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-import { shell } from './utils.mjs'
+import { shell } from './utils'
 
 function main() {
   shell('npx tsc --noEmit')
