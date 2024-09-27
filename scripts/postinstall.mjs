@@ -27,7 +27,6 @@ function symlink(rootPath, filename) {
 
   fs.mkdirSync(path.dirname(dstPath), { recursive: true })
   fs.symlinkSync(srcPath, dstPath)
-  console.log(`symbolic linked. ${srcPath} -> ${dstPath}`)
 }
 
 function parseArgv() {
@@ -46,6 +45,10 @@ function parseArgv() {
 }
 
 const { rootPath } = parseArgv()
-symlink(rootPath, 'scripts/common')
-symlink(rootPath, '.swcrc')
-symlink(rootPath, 'nodemon.json')
+console.log(`symlink files from ${rootPath} to ${process.cwd()}`)
+
+const srcs = ['scripts/common', '.swcrc', 'nodemon.json']
+console.log(`${srcs.join(' ')} done.`)
+for (const src of srcs) {
+  symlink(rootPath, src)
+}
