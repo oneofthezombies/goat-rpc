@@ -44,7 +44,7 @@ function parseArgv() {
 
 function main() {
   const { rootPath } = parseArgv()
-  const srcs = ['scripts/share', '.swcrc', 'nodemon.json']
+  const srcs = ['scripts/share', 'nodemon.json']
   for (const src of srcs) {
     symlink(rootPath, src)
   }

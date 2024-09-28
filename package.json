@@ -5,10 +5,9 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@swc/cli": "0.4.1-nightly.20240914",
-    "@swc/core": "1.7.28",
     "concurrently": "9.0.1",
     "nodemon": "3.1.7",
+    "pkgroll": "2.5.0",
     "rimraf": "6.0.1",
     "sort-package-json": "2.10.1",
     "tsx": "4.19.1",
