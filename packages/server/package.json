@@ -27,9 +27,8 @@
     }
   },
   "scripts": {
-    "check": "scripts/check.mjs",
-    "dev": "scripts/dev.mjs",
-    "start:dev": "tsx src/index.ts"
+    "clean": "rimraf dist",
+    "build": "pkgroll"
   },
   "dependencies": {
     "@goat-rpc/proto": "*"

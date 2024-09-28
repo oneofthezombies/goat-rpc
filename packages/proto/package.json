@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "tsx scripts/build.ts",
-    "clean": "tsx scripts/share/clean.ts"
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "protobufjs": "7.4.0"

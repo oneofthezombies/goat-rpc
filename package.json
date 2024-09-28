@@ -14,8 +14,6 @@
     "typescript": "5.6.2"
   },
   "scripts": {
-    "symlink": "npx --workspaces tsx $(pwd)/scripts/symlink.ts $(pwd)",
-    "postinstall": "npm run symlink",
     "format": "npm run format:package-json",
     "format:package-json": "npx --workspaces sort-package-json"
   }

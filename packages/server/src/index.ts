@@ -1,3 +1,3 @@
-import protocol from '@goat-rpc/proto'
+import * as protocol from '@goat-rpc/proto'
 
 console.log(protocol)

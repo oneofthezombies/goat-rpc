@@ -1,5 +1,0 @@
-{
-  "delay": "300",
-  "exec": "concurrently --kill-others-on-fail --prefix [{name}] --prefix-colors bgBlue.bold,bgRed.bold npm:start:dev npm:check",
-  "ext": "ts"
-}
