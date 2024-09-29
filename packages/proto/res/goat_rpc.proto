@@ -2,135 +2,80 @@ syntax = "proto3";
 
 package goat_rpc;
 
-message ClientMessage {
-  enum Kind {
-    UnaryCall = 2;
-    ServerStreamingCall = 3;
-    ClientStreamingCall = 4;
-    ClientStreamingData = 5;
-    ClientStreamingEnd = 6;
-    BidiStreamingCall = 7;
-    BidiStreamingData = 8;
-    BidiStreamingEnd = 9;
+message Send {
+  oneof kind {
+    Request request = 1;
+    Subscribe subscribe = 2;
+    Unsubscribe unsubscribe = 3;
   }
-
-  Kind kind = 1;
-  optional UnaryCall unary_call = 2;
-  optional ServerStreamingCall server_streaming_call = 3;
-  optional ClientStreamingCall client_streaming_call = 4;
-  optional ClientStreamingData client_streaming_data = 5;
-  optional ClientStreamingEnd client_streaming_end = 6;
-  optional BidiStreamingCall bidi_streaming_call = 7;
-  optional BidiStreamingData bidi_streaming_data = 8;
-  optional BidiStreamingEnd bidi_streaming_end = 9;
 }
 
-message UnaryCall {
-  uint32 call_id = 1;
-  string service = 2;
-  string method = 3;
-  map<string, string> metadata = 4;
-  bytes data = 5;
-}
-
-message ServerStreamingCall {
-  uint32 call_id = 1;
-  string service = 2;
-  string method = 3;
-  map<string, string> metadata = 4;
-  bytes data = 5;
-}
-
-message ClientStreamingCall {
-  uint32 call_id = 1;
-  string service = 2;
-  string method = 3;
-  map<string, string> metadata = 4;
-}
-
-message ClientStreamingData {
-  bytes data = 1;
-}
-
-message ClientStreamingEnd {
-}
-
-message BidiStreamingCall {
-  uint32 call_id = 1;
-  string service = 2;
-  string method = 3;
-  map<string, string> metadata = 4;
-}
-
-message BidiStreamingData {
-  bytes data = 1;
-}
-
-message BidiStreamingEnd {
-}
-
-message ServerMessage {
-  enum Kind {
-    UnaryStatus = 3;
-    ServerStreamingMetadata = 4;
-    ServerStreamingData = 5;
-    ServerStreamingStatus = 6;
-    ClientStreamingMetadata = 7;
-    ClientStreamingStatus = 8;
-    BidiStreamingMetadata = 9;
-    BidiStreamingData = 10;
-    BidiStreamingStatus = 11;
-  }
-
-  uint32 call_id = 1;
-  Kind kind = 2;
-  optional UnaryStatus unary_status = 3;
-  optional ServerStreamingMetadata server_streaming_metadata = 4;
-  optional ServerStreamingData server_streaming_data = 5;
-  optional ServerStreamingStatus server_streaming_status = 6;
-  optional ClientStreamingMetadata client_streaming_metadata = 7;
-  optional ClientStreamingStatus client_streaming_status = 8;
-  optional BidiStreamingMetadata bidi_streaming_metadata = 9;
-  optional BidiStreamingData bidi_streaming_data = 10;
-  optional BidiStreamingStatus bidi_streaming_status = 11;
-}
-
-message Status {
-  uint32 code = 1;
-  string details = 2;
+message Request {
+  uint32 send_id = 1;
+  string key = 2;
   map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }
 
-message UnaryStatus {
-  Status status = 1;
-  bytes data = 2;
+message Subscribe {
+  uint32 send_id = 1;
+  string key = 2;
+  map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }
 
-message ServerStreamingMetadata {
-  map<string, string> metadata = 1;
+message Unsubscribe {
+  uint32 send_id = 1;
+  uint32 source_send_id = 2;
 }
 
-message ServerStreamingData {
-  bytes data = 1;
+message Receive {
+  oneof kind {
+    Error error = 1;
+    Response response = 2;
+    SubscriptionInfo subscription_info = 3;
+    SubscriptionEvent subscription_event = 4;
+    UnsubscriptionInfo unsubscription_info = 5;
+  }
 }
 
-message ServerStreamingStatus {
-  Status status = 1;
+message Error {
+  uint32 receive_id = 1;
+  uint32 source_send_id = 2;
+  uint32 code = 3;
+  string reason = 4;
 }
 
-message ClientStreamingMetadata {
-  map<string, string> metadata = 1;
+message Response {
+  uint32 receive_id = 1;
+  uint32 source_send_id = 2;
+  map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }
 
-message ClientStreamingStatus {
-  Status status = 1;
-  bytes data = 2;
+message SubscriptionInfo {
+  uint32 receive_id = 1;
+  uint32 source_send_id = 2;
+  map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }
 
-message BidiStreamingMetadata {
-  map<string, string> metadata = 1;
+message SubscriptionEvent {
+  uint32 receive_id = 1;
+  uint32 source_send_id = 2;
+  map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }
 
-message BidiStreamingStatus {
-  Status status = 1;
+message UnsubscriptionInfo {
+  uint32 receive_id = 1;
+  uint32 source_send_id = 2;
+  map<string, string> metadata = 3;
+  string text_data = 4;
+  bytes binary_data = 5;
 }

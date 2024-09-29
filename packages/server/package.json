@@ -28,6 +28,10 @@
     "build": "pkgroll --sourcemap=inline"
   },
   "dependencies": {
-    "@goat-rpc/proto": "*"
+    "@goat-rpc/proto": "*",
+    "ws": "8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "8.5.12"
   }
 }
