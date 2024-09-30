@@ -22,7 +22,9 @@ export function run(
     }
 
     console.error(
-      `${command} ${args.join(' ')} exited with code ${result.status}`
+      `${command} ${args.join(
+        ' '
+      )} exited with code ${result.status.toString()}`
     )
     process.exit(result.status)
   }
@@ -34,7 +36,7 @@ export function run(
     process.exit(1)
   }
 
-  throw new Error(`unexpected run result. result: ${result}`)
+  throw new Error(`unexpected run result. result: ${JSON.stringify(result)}`)
 }
 
 export function shell(command: string, options?: SpawnSyncOptions) {
@@ -43,5 +45,5 @@ export function shell(command: string, options?: SpawnSyncOptions) {
     options.shell = true
   }
 
-  return run(command, [], options)
+  run(command, [], options)
 }

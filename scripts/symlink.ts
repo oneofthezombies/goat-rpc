@@ -32,7 +32,7 @@ function parseArgv() {
     throw new Error(`argv[2] must workspace's root path`)
   }
 
-  const rootPath = process.argv[2] || ''
+  const rootPath = process.argv[2] ?? ''
   if (!fs.existsSync(rootPath)) {
     throw new Error(`root path is not exist. path: ${rootPath}`)
   }
