@@ -3,7 +3,7 @@ import WebSocket, { RawData, WebSocketServer } from 'ws'
 
 abstract class Writer {
   async write(data: Uint8Array): Promise<void> {
-    return await this.writeImpl(data)
+    await this.writeImpl(data)
   }
 
   abstract writeImpl(data: Uint8Array): Promise<void>
@@ -89,7 +89,7 @@ function onMessage(ctx: Context, data: Uint8Array) {
       break
     default: {
       const exhaustiveCheck: never = kind
-      throw new Error(`unhandled case: ${exhaustiveCheck}`)
+      throw new Error(`unhandled case: ${JSON.stringify(exhaustiveCheck)}`)
     }
   }
 }
@@ -109,19 +109,19 @@ function parseMessage(data: RawData, isBinary: boolean): Uint8Array {
 abstract class Writer1 {
   async write(data: Uint8Array): Promise<void> {
     // 비동기 처리 로직을 반드시 구현하도록 강제
-    return await this.doWrite(data)
+    await this.doWrite(data)
   }
 
   protected abstract doWrite(data: Uint8Array): Promise<void>
 }
 
 class WebSocketWriter1 extends Writer1 {
-  protected async doWrite(data: Uint8Array): Promise<void> {
+  protected doWrite(data: Uint8Array): Promise<void> {
     throw new Error('a')
   }
 }
 
-new WebSocketWriter1().write(new Uint8Array()).catch((e) => {
+new WebSocketWriter1().write(new Uint8Array()).catch((e: unknown) => {
   console.error('b', e)
 })
 

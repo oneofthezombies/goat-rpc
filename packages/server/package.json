@@ -25,7 +25,8 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "pkgroll --sourcemap=inline"
+    "build": "pkgroll --sourcemap=inline",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@goat-rpc/proto": "*",
