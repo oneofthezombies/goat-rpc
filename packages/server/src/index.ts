@@ -1,5 +1,12 @@
 import proto from '@goat-rpc/proto'
 import WebSocket, { RawData, WebSocketServer } from 'ws'
+import { EventEmitter } from 'node:events'
+
+type Transport = EventEmitter<{}>
+
+const a = new Transport()
+a.on('a', (...args) => {})
+a.emit('a')
 
 abstract class Writer {
   async write(data: Uint8Array): Promise<void> {
