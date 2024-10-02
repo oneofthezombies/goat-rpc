@@ -23,5 +23,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "[proto3]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "typescript.tsdk": "${workspaceFolder}/node_modules/typescript/lib"
 }

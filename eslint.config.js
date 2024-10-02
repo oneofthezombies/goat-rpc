@@ -17,6 +17,8 @@ export default tseslint.config(
     },
     rules: {
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      '@typescript-eslint/require-await': 'off',
+      // '@typescript-eslint/explicit-function-return-type': 'error',
     },
   }
 )

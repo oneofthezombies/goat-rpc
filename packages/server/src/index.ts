@@ -1,12 +1,14 @@
 import proto from '@goat-rpc/proto'
-import WebSocket, { RawData, WebSocketServer } from 'ws'
-import { EventEmitter } from 'node:events'
+import WsWebSocket, { RawData, WebSocketServer } from 'ws'
 
-type Transport = EventEmitter<{}>
-
-const a = new Transport()
-a.on('a', (...args) => {})
-a.emit('a')
+type Socket = {
+  on(event: 'open', callback: () => void): void
+  on(event: 'error', callback: (error: Error) => void): void
+  on(event: 'close', callback: (code: number, reason: string) => void): void
+  on(event: 'message', callback: (data: Uint8Array) => void): void
+  send(data: Uint8Array): void
+  close(code: number, reason: string): void
+}
 
 abstract class Writer {
   async write(data: Uint8Array): Promise<void> {
@@ -17,12 +19,12 @@ abstract class Writer {
 }
 
 class WebSocketWriter extends Writer {
-  constructor(private webSocket: WebSocket) {
+  constructor(private webSocket: WsWebSocket) {
     super()
   }
 
   async writeImpl(data: Uint8Array): Promise<void> {
-    if (this.webSocket.readyState !== WebSocket.OPEN) {
+    if (this.webSocket.readyState !== WsWebSocket.OPEN) {
       throw new Error('websocket is not open')
     }
 
@@ -115,7 +117,6 @@ function parseMessage(data: RawData, isBinary: boolean): Uint8Array {
 
 abstract class Writer1 {
   async write(data: Uint8Array): Promise<void> {
-    // 비동기 처리 로직을 반드시 구현하도록 강제
     await this.doWrite(data)
   }
 
@@ -123,19 +124,17 @@ abstract class Writer1 {
 }
 
 class WebSocketWriter1 extends Writer1 {
-  protected doWrite(data: Uint8Array): Promise<void> {
+  protected async doWrite(): Promise<void> {
     throw new Error('a')
   }
 }
 
-new WebSocketWriter1().write(new Uint8Array()).catch((e: unknown) => {
-  console.error('b', e)
-})
+new WebSocketWriter1().write(new Uint8Array())
 
 // const server = new WebSocketServer({ port: 8080 })
 // server.on('connection', (socket, request) => {
 //   console.log(socket, request)
-//   socket.on('close', (code, reason) => {
+//   socket.on('close', function (code, reason) {
 //     console.log(code, reason)
 //   })
 //   socket.on('message', (data, isBinary) => {
@@ -187,3 +186,23 @@ new WebSocketWriter1().write(new Uint8Array()).catch((e: unknown) => {
 // server.on('listening', () => {
 //   console.log('listening')
 // })
+
+const webSocket = new WebSocket('')
+webSocket.binaryType
+webSocket.addEventListener('open', (ev) => {
+  ev.
+})
+webSocket.addEventListener('error', (ev) => {
+  ev.
+})
+webSocket.addEventListener('close', (ev) => {
+  ev.code
+  ev.reason
+  ev.wasClean
+})
+webSocket.addEventListener('message', (ev) => {
+  ev.data
+  ev.origin
+})
+webSocket.send('')
+webSocket.close(0, '')
